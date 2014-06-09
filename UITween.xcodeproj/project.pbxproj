@@ -19,6 +19,8 @@
 		B207690A1945AB39000E7767 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20768F21945AB39000E7767 /* UIKit.framework */; };
 		B20769121945AB3A000E7767 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B20769101945AB39000E7767 /* InfoPlist.strings */; };
 		B20769141945AB3A000E7767 /* UITweenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B20769131945AB3A000E7767 /* UITweenTests.m */; };
+		B207691F1945AB51000E7767 /* UITween.m in Sources */ = {isa = PBXBuildFile; fileRef = B207691E1945AB51000E7767 /* UITween.m */; };
+		B20769221945AB62000E7767 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20769211945AB62000E7767 /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		B207690F1945AB39000E7767 /* UITweenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UITweenTests-Info.plist"; sourceTree = "<group>"; };
 		B20769111945AB3A000E7767 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B20769131945AB3A000E7767 /* UITweenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITweenTests.m; sourceTree = "<group>"; };
+		B207691D1945AB51000E7767 /* UITween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITween.h; sourceTree = "<group>"; };
+		B207691E1945AB51000E7767 /* UITween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITween.m; sourceTree = "<group>"; };
+		B20769201945AB62000E7767 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		B20769211945AB62000E7767 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,10 @@
 				B20768FE1945AB39000E7767 /* AppDelegate.m */,
 				B20769001945AB39000E7767 /* Images.xcassets */,
 				B20768F51945AB39000E7767 /* Supporting Files */,
+				B207691D1945AB51000E7767 /* UITween.h */,
+				B207691E1945AB51000E7767 /* UITween.m */,
+				B20769201945AB62000E7767 /* TestViewController.h */,
+				B20769211945AB62000E7767 /* TestViewController.m */,
 			);
 			path = UITween;
 			sourceTree = "<group>";
@@ -241,6 +251,8 @@
 			files = (
 				B20768FF1945AB39000E7767 /* AppDelegate.m in Sources */,
 				B20768FB1945AB39000E7767 /* main.m in Sources */,
+				B20769221945AB62000E7767 /* TestViewController.m in Sources */,
+				B207691F1945AB51000E7767 /* UITween.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
