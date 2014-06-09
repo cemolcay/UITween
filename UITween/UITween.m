@@ -42,6 +42,35 @@
     }];
 }
 
+#pragma mark With Spring
+
++ (void)scaleTo:(UIView *)view X:(float)x springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void (^)(void))complation {
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
+        [view setTransform:CGAffineTransformMakeScale(x, view.transform.d)];
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
+    }];
+}
+
++ (void)scaleTo:(UIView *)view Y:(float)y springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void (^)(void))complation {
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
+        [view setTransform:CGAffineTransformMakeScale(view.transform.a, y)];
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
+    }];
+}
+
++ (void)scaleTo:(UIView *)view X:(float)x Y:(float)y springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void (^)(void))complation {
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
+        [view setTransform:CGAffineTransformMakeScale(x, y)];
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
+    }];
+}
+
 #pragma mark Without Animation
 + (void)scale:(UIView *)view X:(float)x {
     [view setTransform:CGAffineTransformMakeScale(x, view.transform.d)];
@@ -56,16 +85,19 @@
 }
 
 
+
 #pragma mark - Rotate
 #pragma mark With Animation
 + (void)rotateTo:(UIView *)view X:(float)x duration:(float)t complation:(void(^)(void))complation {
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
     rotationAndPerspectiveTransform.m34 = 1.0 / -1000.0;
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(x), 1.0f, 0.0f, 0.0f);
+  
     [UIView animateWithDuration:1.0 animations:^{
         view.layer.transform = rotationAndPerspectiveTransform;
     } completion:^(BOOL finished){
-        complation ();
+        if (finished)
+            complation ();
     }];
 }
 
@@ -73,6 +105,7 @@
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
     rotationAndPerspectiveTransform.m34 = 1.0 / -1000.0;
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(y), 0.0f, 1.0f, 0.0f);
+   
     [UIView animateWithDuration:1.0 animations:^{
         view.layer.transform = rotationAndPerspectiveTransform;
     } completion:^(BOOL finished){
@@ -84,6 +117,7 @@
     CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
     rotationAndPerspectiveTransform.m34 = 1.0 / -1000.0;
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(z), 0.0f, 0.0f, 1.0f);
+   
     [UIView animateWithDuration:1.0 animations:^{
         view.layer.transform = rotationAndPerspectiveTransform;
     } completion:^(BOOL finished){
@@ -97,10 +131,66 @@
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(x), 1.0f, 0.0f, 0.0f);
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(y), 0.0f, 1.0f, 0.0f);
     rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(z), 0.0f, 0.0f, 1.0f);
+   
     [UIView animateWithDuration:1.0 animations:^{
         view.layer.transform = rotationAndPerspectiveTransform;
     } completion:^(BOOL finished){
         complation ();
+    }];
+}
+
+#pragma mark With Spring
++ (void)rotateTo:(UIView *)view X:(float)x springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void(^)(void))complation {
+    CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+    rotationAndPerspectiveTransform.m34 = 1.0 / -1000.0;
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(x), 1.0f, 0.0f, 0.0f);
+
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
+        view.layer.transform = rotationAndPerspectiveTransform;
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
+    }];
+}
+
++ (void)rotateTo:(UIView *)view Y:(float)y springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void(^)(void))complation {
+    CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+    rotationAndPerspectiveTransform.m34 = 1.0 / -1000.0;
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(y), 0.0f, 1.0f, 0.0f);
+    
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
+        view.layer.transform = rotationAndPerspectiveTransform;
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
+    }];
+}
+
++ (void)rotateTo:(UIView *)view Z:(float)z springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void(^)(void))complation {
+    CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+    rotationAndPerspectiveTransform.m34 = 1.0 / -1000.0;
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(z), 0.0f, 0.0f, 1.0f);
+    
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
+        view.layer.transform = rotationAndPerspectiveTransform;
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
+    }];
+}
+
++ (void)rotateTo:(UIView *)view X:(float)x Y:(float)y Z:(float)z springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void(^)(void))complation {
+    CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+    rotationAndPerspectiveTransform.m34 = 1.0 / -1000.0;
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(x), 1.0f, 0.0f, 0.0f);
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(y), 0.0f, 1.0f, 0.0f);
+    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, DEGREES_TO_RADIANS(z), 0.0f, 0.0f, 1.0f);
+    
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
+        view.layer.transform = rotationAndPerspectiveTransform;
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
     }];
 }
 
@@ -137,6 +227,8 @@
     view.layer.transform = rotationAndPerspectiveTransform;
 }
 
+
+
 #pragma mark - Move
 #pragma mark With Animation
 + (void)moveTo:(UIView *)view X:(float)x duration:(float)t complation:(void(^)(void))complation {
@@ -159,6 +251,34 @@
 
 + (void)moveTo:(UIView *)view X:(float)x Y:(float)y duration:(float)t complation:(void(^)(void))complation {
     [UIView animateWithDuration:t animations:^{
+        [view setFrame:CGRectMake(x, y, view.frame.size.width, view.frame.size.height)];
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
+    }];
+}
+
+#pragma mark With Spring
++ (void)moveTo:(UIView *)view X:(float)x  springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void (^)(void))complation {
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
+        [view setFrame:CGRectMake(x, view.frame.origin.y, view.frame.size.width, view.frame.size.height)];
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
+    }];
+}
+
++ (void)moveTo:(UIView *)view Y:(float)y  springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void (^)(void))complation {
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
+        [view setFrame:CGRectMake(view.frame.origin.x, y, view.frame.size.width, view.frame.size.height)];
+    } completion:^(BOOL finished) {
+        if (finished)
+            complation ();
+    }];
+}
+
++ (void)moveTo:(UIView *)view X:(float)x Y:(float)y  springDamping:(float)damping springVelocity:(float)velocity duration:(float)t complation:(void (^)(void))complation {
+    [UIView animateWithDuration:t delay:0 usingSpringWithDamping:damping initialSpringVelocity:velocity options:kNilOptions animations:^{
         [view setFrame:CGRectMake(x, y, view.frame.size.width, view.frame.size.height)];
     } completion:^(BOOL finished) {
         if (finished)
