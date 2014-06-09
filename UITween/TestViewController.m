@@ -31,6 +31,8 @@
 //testing
 - (void)tap:(UITapGestureRecognizer *)t {
     
+//   Animated
+//
 //    scale tests
 //    
 //    [UITween scaleTo:t.view X:2 duration:2 complation:^{
@@ -65,10 +67,10 @@
 //    
 //    rotation tests
 //    
-//    [UITween rotateTo:t.view X:45 duration:2 complation:^{
+//    [UITween rotateTo:t.view X:-45 duration:2 complation:^{
 //        NSLog(@"rot comp");
 //    }];
-//    
+//
 //    [UITween rotateTo:t.view Y:45 duration:2 complation:^{
 //        NSLog(@"rot comp");
 //    }];
@@ -80,7 +82,34 @@
 //    [UITween rotateTo:t.view X:45 Y:45 Z:90 duration:2 complation:^{
 //        NSLog(@"rot comp");
 //    }];
-    
+//
+//    
+//    
+//    Not Animated
+//    
+//    scale
+//    [UITween scale:t.view X:2];
+//    
+//    [UITween scale:t.view Y:2];
+//
+//    [UITween scale:t.view X:2 Y:2];
+//    
+//    rotate
+//    [UITween rotate:t.view X:45];
+//
+//    [UITween rotate:t.view Y:45];
+//
+//    [UITween rotate:t.view Z:45];
+//
+//    [UITween rotate:t.view X:45 Y:45 Z:45];
+//
+//    move
+//    [UITween move:t.view X:30];
+//
+//    [UITween move:t.view Y:30];
+//
+//    [UITween move:t.view X:30 Y:30];
+//
 }
 
 
