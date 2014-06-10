@@ -35,56 +35,54 @@
 //
 //    scale
 //    
-//    [UITween scaleTo:t.view X:2 duration:2 complation:^{
+//    [UITween scaleTo:t.view X:2 duration:2 delay:0 complation:^{
 //        NSLog(@"scale comp");
 //    }];
 //
-//    [UITween scaleTo:t.view Y:2 duration:2 complation:^{
+//    [UITween scaleTo:t.view Y:2 duration:2 delay:0 complation:^{
 //        NSLog(@"scale comp");
 //    }];
 //    
-//    [UITween scaleTo:t.view X:2 Y:2 duration:2 complation:^{
+//    [UITween scaleTo:t.view X:2 Y:2 duration:2 delay:0 complation:^{
 //        NSLog(@"scale comp");
 //    }];
-//    
 //    
 //    
 //    move
 //    
-//    [UITween moveTo:t.view X:30 duration:2 complation:^{
+//    [UITween moveTo:t.view X:30 duration:2 delay:0 complation:^{
 //        NSLog(@"move comp");
 //    }];
 //    
-//    [UITween moveTo:t.view Y:30 duration:2 complation:^{
+//    [UITween moveTo:t.view Y:30 duration:2 delay:0 complation:^{
 //        NSLog(@"move comp");
 //    }];
 //    
-//    [UITween moveTo:t.view X:30 Y:30 duration:2 complation:^{
+//    [UITween moveTo:t.view X:30 Y:30 duration:2 delay:0 complation:^{
 //        NSLog(@"move comp");
 //    }];
-//    
 //    
 //    
 //    rotation
 //    
-//    [UITween rotateTo:t.view X:-45 duration:2 complation:^{
+//    [UITween rotateTo:t.view X:-45 duration:2 delay:0 complation:^{
 //        NSLog(@"rot comp");
 //    }];
 //
-//    [UITween rotateTo:t.view Y:45 duration:2 complation:^{
+//    [UITween rotateTo:t.view Y:45 duration:2 delay:0 complation:^{
 //        NSLog(@"rot comp");
 //    }];
 //    
-//    [UITween rotateTo:t.view Z:45 duration:2 complation:^{
+//    [UITween rotateTo:t.view Z:45 duration:2 delay:0 complation:^{
 //        NSLog(@"rot comp");
 //    }];
 //    
-//    [UITween rotateTo:t.view X:45 Y:45 Z:90 duration:2 complation:^{
+//    [UITween rotateTo:t.view X:45 Y:45 Z:90 duration:2 delay:0 complation:^{
 //        NSLog(@"rot comp");
 //    }];
 //
 //    
-//    
+//
 //    Not Animated
 //    
 //    scale
@@ -103,54 +101,24 @@
 //    [UITween move:t.view Y:30];
 //    [UITween move:t.view X:30 Y:30];
 //
-//    
 //
 //    Spring
 //    
 //    scale
-//    [UITween scaleTo:t.view X:2 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"scale comp");
-//    }];
-//    
-//    [UITween scaleTo:t.view Y:2 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"scale comp");
-//    }];
-//
-//    [UITween scaleTo:t.view X:2 Y:2 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"scale comp");
-//    }];
-//
+//    [UITween scaleTo:t.view X:2 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
+//    [UITween scaleTo:t.view Y:2 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
+//    [UITween scaleTo:t.view X:2 Y:2 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
 //    
 //    rotate
-//    [UITween rotateTo:t.view X:40 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"rot comp");
-//    }];
-//
-//    [UITween rotateTo:t.view Y:40 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"rot comp");
-//    }];
-//
-//    [UITween rotateTo:t.view Z:40 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"rot comp");
-//    }];
-//
-//    [UITween rotateTo:t.view X:40 Y:40 Z:40 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"rot comp");
-//    }];
-//
+//    [UITween rotateTo:t.view X:40 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
+//    [UITween rotateTo:t.view Y:40 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
+//    [UITween rotateTo:t.view Z:40 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
+//    [UITween rotateTo:t.view X:40 Y:40 Z:40 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
 //
 //    move
-//    [UITween moveTo:t.view X:30 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"move comp");
-//    }];
-//
-//    [UITween moveTo:t.view Y:30 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"move comp");
-//    }];
-//
-//    [UITween moveTo:t.view X:30 Y:30 springDamping:100 springVelocity:10 duration:2 complation:^{
-//        NSLog(@"move comp");
-//    }];
+//    [UITween moveTo:t.view X:30 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
+//    [UITween moveTo:t.view Y:30 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
+//    [UITween moveTo:t.view X:30 Y:30 springDamping:100 springVelocity:10 duration:2 delay:0 complation:nil];
 //
 }
 

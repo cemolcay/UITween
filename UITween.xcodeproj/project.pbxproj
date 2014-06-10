@@ -451,6 +451,7 @@
 				B20769191945AB3A000E7767 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B207691A1945AB3A000E7767 /* Build configuration list for PBXNativeTarget "UITweenTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +460,7 @@
 				B207691C1945AB3A000E7767 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
